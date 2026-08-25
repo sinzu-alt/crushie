@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinzu Messenger Bot Dashboard</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover;
+            color: #dcdcdc;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .navbar {
+            width: 100%;
+            max-width: 450px;
+            background: rgba(20, 20, 25, 0.85);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .bot-logo {
+            color: #00ffff;
+            font-size: 24px;
+        }
+        .menu-btn {
+            background: none;
+            border: 1px solid #444;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .card {
+            width: 100%;
+            max-width: 450px;
+            background: rgba(18, 18, 22, 0.85);
+            border: 1px solid #2d2d38;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            text-align: center;
+        }
+        .title-box {
+            background: #111;
+            border: 1px solid #444;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        .version {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+        .banner-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #333;
+        }
+        .desc {
+            font-size: 13px;
+            color: #bbb;
+            line-height: 1.5;
+        }
+        .btn-select {
+            width: 100%;
+            background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+            border: none;
+            color: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 15px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(75, 104, 183, 0.4);
+            transition: 0.3s;
+        }
+        .btn-select:hover {
+            opacity: 0.9;
+        }
+        .command-item {
+            background: rgba(25, 25, 32, 0.9);
+            border: 1px solid #3a3a48;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            text-align: left;
+            font-size: 13px;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .command-item span {
+            color: #00ffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="bot-logo">🤖</div>
+        <button class="menu-btn">&#9776;</button>
+    </div>
+
+    <div class="card">
+        <div class="title-box">sinzu messngr-bot</div>
+        <div class="version">Version: 1.0.1</div>
+        <img class="banner-img" src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=800&auto=format&fit=crop" alt="Banner">
+        <div class="desc">
+            Greetings! Begin by entering your cookie.<br>Scroll down to see other features.
+        </div>
+    </div>
+
+    <div class="card" style="text-align: left;">
+        <div class="desc" style="text-align: center; margin-bottom: 15px;">
+            Please choose your commands by tapping on the respective options.
+        </div>
+        <button class="btn-select">SELECT ALL COMMANDS</button>
+
+        <div id="command-list">
+            <!-- Dynamically populated commands -->
+        </div>
+    </div>
+
+    <script>
+        const commands = [
+            'autoreply', 'dailytask', 'slot', 'banner', 'shoti', 'tiktok', 'youtube', 
+            'song', 'ai', 'megaslot', 'setnickname', 'loungename', 'adduser', 'acceptuser', 
+            'pinterest', 'setadmin', 'announcement', 'currency', 'tagall', 'platgenerator', 
+            'spy', 'dox', 'trash', 'leaderboards', 'qic', 'bibleverse', 'userinfo', 'admins', 'active-session'
+        ];
+        
+        const listContainer = document.getElementById('command-list');
+        commands.forEach((cmd, index) => {
+            const div = document.createElement('div');
+            div.className = 'command-item';
+            div.innerHTML = `${index + 1}. <span>${cmd}</span>`;
+            listContainer.appendChild(div);
+        });
+    </script>
+</body>
+  </html>
