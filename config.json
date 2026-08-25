@@ -1,0 +1,6 @@
+{
+  "PREFIX": "!",
+  "ADMINBOT": ["100000000000000"],
+  "BOTNAME": "Sinzu Bot",
+  "PORT": 3000
+}
